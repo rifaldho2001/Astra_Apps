@@ -62,7 +62,7 @@ class HomeView extends GetView<HomeController> {
                         },
                         style: TextButton.styleFrom(
                           backgroundColor: controller.selectedCityIndex.value == index
-                              ? const Color(0xFFFDCA40) // ubah warna tombol ketika dipilih
+                              ? Color(0xFFFDCA40) // ubah warna tombol ketika dipilih
                               : const Color(0x408D8D8D), // warna 25%
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(7),
@@ -105,12 +105,18 @@ class HomeView extends GetView<HomeController> {
                     ),
                     minimumSize: const Size(double.infinity, 80),
                   ),
-                  child: const Text(
-                    'Astra Motor MT Haryono',
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Color(0xFF212121)),),
-                ),
+                  child: Row(
+                        children: [
+                          Icon(
+                            Icons.circle,
+                            color: Colors.grey,
+                            size: 24.0,
+                            semanticLabel: 'Text to announce in accessibility modes',
+                          ),
+                          Text("Astra Motor MT. Hariyono",style: TextStyle(color: Colors.black, fontSize: 24), )
+                        ],
+                      ),
+                    ),
                 const SizedBox(height: 15),
                 Expanded(
                   child: Align(

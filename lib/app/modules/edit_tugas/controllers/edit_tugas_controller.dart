@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class TugasController extends GetxController {
-  //TODO: Implement TugasController
+class EditTugasController extends GetxController {
+  //TODO: Implement EditTugasController
 
   final count = 0.obs;
   @override
@@ -20,8 +20,4 @@ class TugasController extends GetxController {
   }
 
   void increment() => count.value++;
-
-  void pencet(){
-    print("bisa");
-  }
 }

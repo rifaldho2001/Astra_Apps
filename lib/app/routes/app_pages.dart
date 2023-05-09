@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/edit_tugas/bindings/edit_tugas_binding.dart';
+import '../modules/edit_tugas/views/edit_tugas_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
@@ -12,7 +14,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.TUGAS;
+  static const INITIAL = Routes.EDIT_TUGAS;
 
   static final routes = [
     GetPage(
@@ -29,6 +31,11 @@ class AppPages {
       name: _Paths.TUGAS,
       page: () => const TugasView(),
       binding: TugasBinding(),
+    ),
+    GetPage(
+      name: _Paths.EDIT_TUGAS,
+      page: () => const EditTugasView(),
+      binding: EditTugasBinding(),
     ),
   ];
 }
