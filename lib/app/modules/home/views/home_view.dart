@@ -140,6 +140,50 @@ class HomeView extends GetView<HomeController> {
         ],
         ),
       ),
+    floatingActionButton: Container(
+      padding: EdgeInsets.all(10),
+      margin: EdgeInsets.symmetric(horizontal: 20),
+      alignment: Alignment.center,
+      width: double.infinity,
+      height: 100,
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromRGBO(217, 217, 217, 1),
+            blurRadius: 10.0,
+            spreadRadius: 2.0
+          ),
+        ],
+        color: Color.fromRGBO(255, 255, 255, 1), 
+        borderRadius: BorderRadius.circular(50), 
+      ),
+      child: Row(
+        children: [
+          ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Color.fromRGBO(20, 85, 163, 1),
+              minimumSize: const Size.fromWidth(165),
+              shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(50)
+            )  
+                      ), 
+            child: Text('profile')),
+          ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Color.fromRGBO(20, 85, 163, 1),
+              minimumSize: const Size.fromWidth(165),
+              shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(50)
+            )  
+                      ), 
+            child: Text('profile')),
+          
+        ],
+      ),
+    ),
+    floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
