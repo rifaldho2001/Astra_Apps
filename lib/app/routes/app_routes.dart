@@ -15,4 +15,5 @@ abstract class _Paths {
   static const PROFILE = '/profile';
   static const TUGAS = '/tugas';
   static const LOGIN = '/login';
+  static const EDIT_TUGAS = '/edit-tugas';
 }
