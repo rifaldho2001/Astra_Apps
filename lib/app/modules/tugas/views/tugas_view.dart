@@ -13,29 +13,19 @@ class TugasView extends GetView<TugasController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          toolbarHeight: 100,
-          title: const Text('Tugas 1',style: TextStyle(color: Colors.black, fontSize: 40),),
+          toolbarHeight: 60,
+          title: const Text('Tugas 1',style: TextStyle(color: Colors.black, fontSize: 22),),
           leading: IconButton(
             onPressed: () {},
-            icon: Icon(Icons.chevron_left),
-            iconSize: 60,
+            icon: Icon(Icons.arrow_back_ios_new_rounded),
+            iconSize: 20,
             color: Colors.black,
           ),
           actions: <Widget>[
             IconButton(
               icon: Icon(
-                Icons.notifications,
-                size: 40,
-                color: Colors.black,
-              ),
-              onPressed: () {
-                // do something
-              },
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.calendar_month,
-                size: 40,
+                Icons.notifications_none_rounded,
+                size: 30,
                 color: Colors.black,
               ),
               onPressed: () {
@@ -47,7 +37,7 @@ class TugasView extends GetView<TugasController> {
           elevation: 0,
         ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
         child: ListView(
           scrollDirection: Axis.vertical,
           children: [

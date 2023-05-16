@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class EditTugasController extends GetxController {
-  //TODO: Implement EditTugasController
+class TambahTugasController extends GetxController {
+  //TODO: Implement TambahTugasController
 
   final count = 0.obs;
   @override

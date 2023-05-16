@@ -2,53 +2,35 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/edit_tugas_controller.dart';
+import '../controllers/tambah_tugas_controller.dart';
 
-class EditTugasView extends GetView<EditTugasController> {
-  const EditTugasView({Key? key}) : super(key: key);
+class TambahTugasView extends GetView<TambahTugasController> {
+  const TambahTugasView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFF8F8F8),
       appBar: AppBar(
-        toolbarHeight: 100,
-        title: const Text('Tugas 1',style: TextStyle(color: Colors.black, fontSize: 40),),
+        toolbarHeight: 60,
         leading: IconButton(
           onPressed: () {},
-          icon: Icon(Icons.chevron_left),
-          iconSize: 60,
+          icon: Icon(Icons.arrow_back_ios_new_rounded),
+          iconSize: 20,
           color: Colors.black,
         ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.notifications,
-              size: 40,
-              color: Colors.black,
-            ),
-            onPressed: () {
-              // do something
-            },
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.calendar_month,
-              size: 40,
-              color: Colors.black,
-            ),
-            onPressed: () {
-              // do something
-            },
-          ),
-        ],
         backgroundColor: const Color(0xFFF8F8F8),
         elevation: 0,
       ),
       body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
           child: ListView(
               children: <Widget>[
                 Container(
-                  margin: EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.all(15), // Tambahkan padding dengan nilai 15
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(13),
+                    color: Color(0xFFFFFFFF),
+                  ),
                   child: Column(
                     children: [
                       Row(
@@ -57,8 +39,8 @@ class EditTugasView extends GetView<EditTugasController> {
                             Icons.circle,
                             color: Colors.grey,
                             size: 24.0,
-                            semanticLabel: 'Text to announce in accessibility modes',
                           ),
+                          SizedBox(width: 10,),
                           Text("Nama Tugas", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20, ),)
                         ],
                       ),
@@ -67,7 +49,7 @@ class EditTugasView extends GetView<EditTugasController> {
                         child:  TextFormField(
                           decoration: const InputDecoration(
                             border: UnderlineInputBorder(),
-                            labelText: 'Masukkan Nama Tugas',
+                            labelText: 'Tuliskan nama tugas',
                           ),
                         ),
                       )
@@ -75,9 +57,14 @@ class EditTugasView extends GetView<EditTugasController> {
                     ],
                   ),
                 ),
+                SizedBox(height: 20,),
 
                 Container(
-                  margin: EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.all(15), // Tambahkan padding dengan nilai 15
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(13),
+                    color: Color(0xFFFFFFFF),
+                  ),
                   child: Column(
                     children: [
                       Row(
@@ -86,9 +73,9 @@ class EditTugasView extends GetView<EditTugasController> {
                             Icons.circle,
                             color: Colors.grey,
                             size: 24.0,
-                            semanticLabel: 'Text to announce in accessibility modes',
                           ),
-                          Text("Nama Temuan", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),)
+                          SizedBox(width: 10,),
+                          Text("Temuan", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),)
                         ],
                       ),
                       Container(
@@ -96,16 +83,21 @@ class EditTugasView extends GetView<EditTugasController> {
                         child:  TextFormField(
                           decoration: const InputDecoration(
                             border: UnderlineInputBorder(),
-                            labelText: 'Masukkan Nama Temuan',
+                            labelText: 'Tuliskan temuan yang perlu diperbaiki',
                           ),
                         ),
                       )
                     ],
                   ),
                 ),
+                SizedBox(height: 20,),
 
                 Container(
-                  margin: EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.all(15), // Tambahkan padding dengan nilai 15
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(13),
+                    color: Color(0xFFFFFFFF),
+                  ),
                   child: Column(
                     children: [
                       Row(
@@ -114,8 +106,8 @@ class EditTugasView extends GetView<EditTugasController> {
                             Icons.circle,
                             color: Colors.grey,
                             size: 24.0,
-                            semanticLabel: 'Text to announce in accessibility modes',
                           ),
+                          SizedBox(width: 10,),
                           Text("Activity Perbaikan", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),)
                         ],
                       ),
@@ -124,16 +116,21 @@ class EditTugasView extends GetView<EditTugasController> {
                         child:  TextFormField(
                           decoration: const InputDecoration(
                             border: UnderlineInputBorder(),
-                            labelText: 'Tuliskan Activity Perbaikan',
+                            labelText: 'Tuliskan activity perbaikan',
                           ),
                         ),
                       )
                     ],
                   ),
                 ),
+                SizedBox(height: 20,),
 
                 Container(
-                  margin: EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.all(15), // Tambahkan padding dengan nilai 15
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(13),
+                    color: Color(0xFFFFFFFF),
+                  ),
                   child: Column(
                     children: [
                       Row(
@@ -142,8 +139,8 @@ class EditTugasView extends GetView<EditTugasController> {
                             Icons.circle,
                             color: Colors.grey,
                             size: 24.0,
-                            semanticLabel: 'Text to announce in accessibility modes',
                           ),
+                          SizedBox(width: 10,),
                           Text("Dealer", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),)
                         ],
                       ),
@@ -152,16 +149,21 @@ class EditTugasView extends GetView<EditTugasController> {
                         child:  TextFormField(
                           decoration: const InputDecoration(
                             border: UnderlineInputBorder(),
-                            labelText: 'Tuliskan Letak Dealer',
+                            labelText: 'Tuliskan letak dealer',
                           ),
                         ),
                       )
                     ],
                   ),
                 ),
+                SizedBox(height: 10,),
 
                 Container(
-                  margin: EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.all(15), // Tambahkan padding dengan nilai 15
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(13),
+                    color: Color(0xFFFFFFFF),
+                  ),
                   child: Column(
                     children: [
                       Row(
@@ -170,8 +172,8 @@ class EditTugasView extends GetView<EditTugasController> {
                             Icons.circle,
                             color: Colors.grey,
                             size: 24.0,
-                            semanticLabel: 'Text to announce in accessibility modes',
                           ),
+                          SizedBox(width: 10,),
                           Text("Lokasi Temuan", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),)
                         ],
                       ),
@@ -180,16 +182,21 @@ class EditTugasView extends GetView<EditTugasController> {
                         child:  TextFormField(
                           decoration: const InputDecoration(
                             border: UnderlineInputBorder(),
-                            labelText: 'Tuliskan Lokasi Temuan',
+                            labelText: 'Tuliskan lokasi temuan',
                           ),
                         ),
                       )
                     ],
                   ),
                 ),
+                SizedBox(height: 10,),
 
                 Container(
-                  margin: EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.all(15), // Tambahkan padding dengan nilai 15
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(13),
+                    color: Color(0xFFFFFFFF),
+                  ),
                   child: Column(
                     children: [
                       Row(
@@ -198,68 +205,78 @@ class EditTugasView extends GetView<EditTugasController> {
                             Icons.circle,
                             color: Colors.grey,
                             size: 24.0,
-                            semanticLabel: 'Text to announce in accessibility modes',
                           ),
-                          Text("Lokasi Temuan", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),)
+                          SizedBox(width: 10,),
+                          Flexible(child: Text("Nama PIC",style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20)),
+                          ),
                         ],
                       ),
                       Container(
-                        margin: EdgeInsets.only(left: 25, top: 30, right: 25),
-                        child:  ElevatedButton(
-                            onPressed: (){},
-                            style: ElevatedButton.styleFrom(
-                              elevation: 0,
-                              backgroundColor: const Color.fromRGBO(211, 211, 211, 1),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(11),
-                              ),
-                              minimumSize: const Size(double.infinity, 180),
+                        margin: EdgeInsets.only(left: 25,right: 25),
+                        child:  TextFormField(
+                          decoration: const InputDecoration(
+                            border: UnderlineInputBorder(),
+                            labelText: 'PIC yang melakukan temuan',
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 10,),
+
+                Container(
+                  padding: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(13),
+                    color: Color(0xFFFFFFFF),
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.circle,
+                            color: Colors.grey,
+                            size: 24.0,
+                          ),
+                          SizedBox(width: 10),
+                          Text(
+                            "Dokumentasi Temuan",
+                            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        padding: EdgeInsets.symmetric(vertical: 20),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            elevation: 0,
+                            backgroundColor: const Color(0xFFD3D3D3),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(9),
                             ),
-                            child: Icon(
-                              Icons.image,
-                              color: Colors.black,
-                              size: 50.0,
-                              semanticLabel: 'Text to announce in accessibility modes',
-                            )
-                        )
-                      ),
-
-                    ],
-                  ),
-                ),
-
-                Container(
-                  margin: EdgeInsets.only(bottom: 20),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.circle,
-                            color: Colors.grey,
-                            size: 24.0,
-                            semanticLabel: 'Text to announce in accessibility modes',
+                            minimumSize: const Size(216, 144),
                           ),
-                          Text("Tanggal Progres Perbaikan", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),)
-                        ],
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 25,right: 25),
-                        child:  TextFormField(
-                          decoration: const InputDecoration(
-                            border: UnderlineInputBorder(),
-                            labelText: 'Masukkan Tanggal Perbaikan',
+                          child: Icon(
+                            Icons.add_rounded,
+                            color: Color(0xFFF8F8F8),
+                            size: 40.0,
                           ),
                         ),
                       ),
-
-
                     ],
                   ),
                 ),
+                SizedBox(height: 10,),
 
                 Container(
-                  margin: EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.all(15), // Tambahkan padding dengan nilai 15
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(13),
+                    color: Color(0xFFFFFFFF),
+                  ),
                   child: Column(
                     children: [
                       Row(
@@ -268,39 +285,8 @@ class EditTugasView extends GetView<EditTugasController> {
                             Icons.circle,
                             color: Colors.grey,
                             size: 24.0,
-                            semanticLabel: 'Text to announce in accessibility modes',
                           ),
-                          Flexible(child: Text("PIC yang melakukan Progres Update Temuan",style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20)),
-                          ),
-                        ],
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 25,right: 25),
-                        child:  TextFormField(
-                          decoration: const InputDecoration(
-                            border: UnderlineInputBorder(),
-                            labelText: 'Nama Panjang C',
-                          ),
-                        ),
-                      ),
-
-
-                    ],
-                  ),
-                ),
-
-                Container(
-                  margin: EdgeInsets.only(bottom: 20),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.circle,
-                            color: Colors.grey,
-                            size: 24.0,
-                            semanticLabel: 'Text to announce in accessibility modes',
-                          ),
+                          SizedBox(width: 10,),
                           Text("Tanggal Tengat Tugas", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),)
                         ],
                       ),
@@ -313,30 +299,27 @@ class EditTugasView extends GetView<EditTugasController> {
                           ),
                         ),
                       ),
-
-
                     ],
                   ),
                 ),
+
               ],
           ),
         ),
       floatingActionButton: ElevatedButton(
           style: ElevatedButton.styleFrom(
-          primary: Colors.blue,
-          onPrimary: Colors.white,
-          shadowColor: Colors.greenAccent,
-          elevation: 3,
+          backgroundColor: Color(0xFF1455A3),
+          elevation: 0,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(50.0)),
-          padding: EdgeInsetsDirectional.symmetric(vertical: 35, horizontal:25 ),
-          minimumSize: Size(100, 10), //////// HERE
+          padding: EdgeInsetsDirectional.all(15),
+          minimumSize: Size(30, 30),
         ),
         onPressed: () {},
         child: Icon(
-          Icons.add_circle_outline,
-          size: 35,
-          color: Color.fromRGBO(255, 255, 255, 1),
+          Icons.check_rounded,
+          size: 30,
+          color: Color(0xFFF8F8F8),
         ),
 
     ),
