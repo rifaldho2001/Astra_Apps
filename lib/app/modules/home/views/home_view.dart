@@ -130,7 +130,7 @@ class HomeView extends GetView<HomeController> {
                       },
                       style: ElevatedButton.styleFrom(
                         elevation: 0,
-                        backgroundColor: const Color(0xFFE90B0B),
+                        backgroundColor: const Color(0xFFFFFFFF),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(11),
                         ),
