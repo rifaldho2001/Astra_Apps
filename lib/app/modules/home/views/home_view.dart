@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controllers/home_controller.dart';
+import '../../profile/views/profile_view.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
@@ -96,7 +97,9 @@ class HomeView extends GetView<HomeController> {
             child: Column(
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    
+                  },
                   style: ElevatedButton.styleFrom(
                     elevation: 0,
                     backgroundColor: const Color(0xFFF8F8F8),
@@ -122,7 +125,9 @@ class HomeView extends GetView<HomeController> {
                   child: Align(
                     alignment: Alignment.bottomRight,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        
+                      },
                       style: ElevatedButton.styleFrom(
                         elevation: 0,
                         backgroundColor: const Color(0xFFF8F8F8),
@@ -174,17 +179,35 @@ class HomeView extends GetView<HomeController> {
               borderRadius: BorderRadius.circular(50)
             )  
                       ), 
-            child: Text('profile')),
+            child:  Icon(
+                            Icons.menu_book, 
+                            color: Color.fromRGBO(255, 255, 255, 1),
+                            size: 24.0,
+                            semanticLabel: 'Text to announce in accessibility modes',
+                          ),),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return ProfileView();
+                  }, 
+                  ),
+              );
+            },
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color.fromRGBO(20, 85, 163, 1),
+              backgroundColor: Color.fromRGBO(255, 255, 255, 1),
               minimumSize: const Size.fromWidth(165),
               shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(50)
             )  
                       ), 
-            child: Text('profile')),
+            child: Icon(
+                            Icons.people,
+                            color: Color.fromRGBO(20, 85, 163, 1),
+                            size: 24.0,
+                            semanticLabel: 'Text to announce in accessibility modes',
+                          ),),
           
         ],
       ),
