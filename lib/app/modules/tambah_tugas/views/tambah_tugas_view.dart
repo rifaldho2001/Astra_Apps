@@ -6,6 +6,9 @@ import '../controllers/tambah_tugas_controller.dart';
 
 class TambahTugasView extends GetView<TambahTugasController> {
   const TambahTugasView({Key? key}) : super(key: key);
+
+  // int _value = 1
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +16,9 @@ class TambahTugasView extends GetView<TambahTugasController> {
       appBar: AppBar(
         toolbarHeight: 60,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pop( );
+          },
           icon: Icon(Icons.arrow_back_ios_new_rounded),
           iconSize: 20,
           color: Colors.black,
@@ -303,6 +308,69 @@ class TambahTugasView extends GetView<TambahTugasController> {
                   ),
                 ),
 
+                Container(
+                  padding: EdgeInsets.all(15), // Tambahkan padding dengan nilai 15
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(13),
+                    color: Color(0xFFFFFFFF),
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.circle,
+                            color: Colors.grey,
+                            size: 24.0,
+                          ),
+                          SizedBox(width: 10,),
+                          Text("Tanggal Tengat Tugas", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),)
+                        ],
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 25,right: 25,bottom: 50),
+                        child: Column(children: [ 
+                          Row(children: [
+                            Radio(
+                              value: 1, 
+                              groupValue: 1, 
+                              onChanged: (value){},
+                            ),
+                              SizedBox(width: 10.0,),
+                              Text("DONE"),
+
+                               Radio(
+                              value: 2, 
+                              groupValue: 2, 
+                              onChanged: (value){},
+                            ),
+                              SizedBox(width: 10.0,),
+                              Text("ON Progres"),
+                          ],),
+                          Row(children: [
+                            Radio(
+                              value: 3, 
+                              groupValue: 3, 
+                              onChanged: (value){},
+                            ),
+                              SizedBox(width: 10.0,),
+                              Text("DROP"),
+
+                               Radio(
+                              value: 4, 
+                              groupValue: 4, 
+                              onChanged: (value){},
+                            ),
+                              SizedBox(width: 10.0,),
+                              Text("IDLE"),
+                          ],),
+  
+                        ]), 
+                      ),
+                    ],
+                  ),
+                ),
+
               ],
           ),
         ),
@@ -315,7 +383,9 @@ class TambahTugasView extends GetView<TambahTugasController> {
           padding: EdgeInsetsDirectional.all(15),
           minimumSize: Size(30, 30),
         ),
-        onPressed: () {},
+        onPressed: () {
+            Navigator.of(context).pop( );
+        },
         child: Icon(
           Icons.check_rounded,
           size: 30,

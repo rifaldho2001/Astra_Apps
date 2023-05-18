@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 import '../controllers/home_controller.dart';
 import '../../profile/views/profile_view.dart';
-
+import '../../tugas/views/tugas_view.dart';
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
 
@@ -98,7 +98,13 @@ class HomeView extends GetView<HomeController> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    
+                    Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return TugasView();
+                      }, 
+                  ),
+              );
                   },
                   style: ElevatedButton.styleFrom(
                     elevation: 0,

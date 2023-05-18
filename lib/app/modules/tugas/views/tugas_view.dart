@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controllers/tugas_controller.dart';
+import '../../tambah_tugas/views/tambah_tugas_view.dart';
+import '../../home/views/home_view.dart';
 
 class TugasView extends GetView<TugasController> {
   const TugasView({Key? key}) : super(key: key);
@@ -16,7 +18,9 @@ class TugasView extends GetView<TugasController> {
           toolbarHeight: 60,
           title: const Text('Tugas 1',style: TextStyle(color: Colors.black, fontSize: 22),),
           leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+                 Navigator.of(context).pop( );
+            },
             icon: Icon(Icons.arrow_back_ios_new_rounded),
             iconSize: 20,
             color: Colors.black,
@@ -402,7 +406,15 @@ class TugasView extends GetView<TugasController> {
                 borderRadius: BorderRadius.circular(32.0)),
             minimumSize: Size(100, 40), //////// HERE
           ),
-          onPressed: () {},
+          onPressed: () {
+             Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return TambahTugasView();
+                      }, 
+                  ),
+              );
+          },
           child: Text('+  Tambahkan Tugas '),
 
 
