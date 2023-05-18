@@ -46,7 +46,7 @@ class TambahTugasView extends GetView<TambahTugasController> {
                             size: 24.0,
                           ),
                           SizedBox(width: 10,),
-                          Text("Nama Tugas", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20, ),)
+                          Text("Nama Temuan", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20, ),)
                         ],
                       ),
                       Container(
@@ -54,7 +54,7 @@ class TambahTugasView extends GetView<TambahTugasController> {
                         child:  TextFormField(
                           decoration: const InputDecoration(
                             border: UnderlineInputBorder(),
-                            labelText: 'Tuliskan nama tugas',
+                            labelText: 'Tuliskan nama temuan',
                           ),
                         ),
                       )
@@ -62,40 +62,7 @@ class TambahTugasView extends GetView<TambahTugasController> {
                     ],
                   ),
                 ),
-                SizedBox(height: 20,),
-
-                Container(
-                  padding: EdgeInsets.all(15), // Tambahkan padding dengan nilai 15
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(13),
-                    color: Color(0xFFFFFFFF),
-                  ),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.circle,
-                            color: Colors.grey,
-                            size: 24.0,
-                          ),
-                          SizedBox(width: 10,),
-                          Text("Temuan", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),)
-                        ],
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 25,right: 25),
-                        child:  TextFormField(
-                          decoration: const InputDecoration(
-                            border: UnderlineInputBorder(),
-                            labelText: 'Tuliskan temuan yang perlu diperbaiki',
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(height: 20,),
+                SizedBox(height: 10,),
 
                 Container(
                   padding: EdgeInsets.all(15), // Tambahkan padding dengan nilai 15
@@ -125,106 +92,6 @@ class TambahTugasView extends GetView<TambahTugasController> {
                           ),
                         ),
                       )
-                    ],
-                  ),
-                ),
-                SizedBox(height: 20,),
-
-                Container(
-                  padding: EdgeInsets.all(15), // Tambahkan padding dengan nilai 15
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(13),
-                    color: Color(0xFFFFFFFF),
-                  ),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.circle,
-                            color: Colors.grey,
-                            size: 24.0,
-                          ),
-                          SizedBox(width: 10,),
-                          Text("Dealer", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),)
-                        ],
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 25,right: 25),
-                        child:  TextFormField(
-                          decoration: const InputDecoration(
-                            border: UnderlineInputBorder(),
-                            labelText: 'Tuliskan letak dealer',
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(height: 10,),
-
-                Container(
-                  padding: EdgeInsets.all(15), // Tambahkan padding dengan nilai 15
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(13),
-                    color: Color(0xFFFFFFFF),
-                  ),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.circle,
-                            color: Colors.grey,
-                            size: 24.0,
-                          ),
-                          SizedBox(width: 10,),
-                          Text("Lokasi Temuan", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),)
-                        ],
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 25,right: 25),
-                        child:  TextFormField(
-                          decoration: const InputDecoration(
-                            border: UnderlineInputBorder(),
-                            labelText: 'Tuliskan lokasi temuan',
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(height: 10,),
-
-                Container(
-                  padding: EdgeInsets.all(15), // Tambahkan padding dengan nilai 15
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(13),
-                    color: Color(0xFFFFFFFF),
-                  ),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.circle,
-                            color: Colors.grey,
-                            size: 24.0,
-                          ),
-                          SizedBox(width: 10,),
-                          Flexible(child: Text("Nama PIC",style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20)),
-                          ),
-                        ],
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 25,right: 25),
-                        child:  TextFormField(
-                          decoration: const InputDecoration(
-                            border: UnderlineInputBorder(),
-                            labelText: 'PIC yang melakukan temuan',
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                 ),
@@ -292,24 +159,26 @@ class TambahTugasView extends GetView<TambahTugasController> {
                             size: 24.0,
                           ),
                           SizedBox(width: 10,),
-                          Text("Tanggal Tengat Tugas", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),)
+                          Flexible(child: Text("Nama PIC",style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20)),
+                          ),
                         ],
                       ),
                       Container(
-                        margin: EdgeInsets.only(left: 25,right: 25,bottom: 50),
+                        margin: EdgeInsets.only(left: 25,right: 25),
                         child:  TextFormField(
                           decoration: const InputDecoration(
                             border: UnderlineInputBorder(),
-                            labelText: 'Masukkan Tanggal Tegat tugas',
+                            labelText: 'PIC yang melakukan temuan',
                           ),
                         ),
                       ),
                     ],
                   ),
                 ),
+                SizedBox(height: 10,),
 
                 Container(
-                  padding: EdgeInsets.all(15), // Tambahkan padding dengan nilai 15
+                  padding: EdgeInsets.all(15),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(13),
                     color: Color(0xFFFFFFFF),
@@ -324,52 +193,152 @@ class TambahTugasView extends GetView<TambahTugasController> {
                             size: 24.0,
                           ),
                           SizedBox(width: 10,),
-                          Text("Tanggal Tengat Tugas", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),)
+                          Text(
+                            "Tanggal Temuan",
+                            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                          )
                         ],
                       ),
                       Container(
-                        margin: EdgeInsets.only(left: 25,right: 25,bottom: 50),
-                        child: Column(children: [ 
-                          Row(children: [
-                            Radio(
-                              value: 1, 
-                              groupValue: 1, 
-                              onChanged: (value){},
-                            ),
-                              SizedBox(width: 10.0,),
-                              Text("DONE"),
-
-                               Radio(
-                              value: 2, 
-                              groupValue: 2, 
-                              onChanged: (value){},
-                            ),
-                              SizedBox(width: 10.0,),
-                              Text("ON Progres"),
-                          ],),
-                          Row(children: [
-                            Radio(
-                              value: 3, 
-                              groupValue: 3, 
-                              onChanged: (value){},
-                            ),
-                              SizedBox(width: 10.0,),
-                              Text("DROP"),
-
-                               Radio(
-                              value: 4, 
-                              groupValue: 4, 
-                              onChanged: (value){},
-                            ),
-                              SizedBox(width: 10.0,),
-                              Text("IDLE"),
-                          ],),
-  
-                        ]), 
+                        margin: EdgeInsets.only(left: 25, right: 25),
+                        child: TextFormField(
+                          onTap: () {
+                            showDatePicker(
+                              context: context,
+                              initialDate: DateTime.now(),
+                              firstDate: DateTime(2000),
+                              lastDate: DateTime(2100),
+                            ).then((selectedDate) {
+                              if (selectedDate != null) {
+                                // Tangkap tanggal yang dipilih dan lakukan sesuatu dengan nilainya
+                                print(selectedDate);
+                              }
+                            });
+                          },
+                          decoration: const InputDecoration(
+                            border: UnderlineInputBorder(),
+                            labelText: 'Pilih tanggal temuan',
+                          ),
+                          readOnly: true, // Membuat field menjadi read-only
+                        ),
                       ),
                     ],
                   ),
                 ),
+                SizedBox(height: 10,),
+
+                Container(
+                  padding: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(13),
+                    color: Color(0xFFFFFFFF),
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.circle,
+                            color: Colors.grey,
+                            size: 24.0,
+                          ),
+                          SizedBox(width: 10,),
+                          Text(
+                            "Tanggal Tenggat Perbaikan",
+                            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                          )
+                        ],
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 25, right: 25),
+                        child: TextFormField(
+                          onTap: () {
+                            showDatePicker(
+                              context: context,
+                              initialDate: DateTime.now(),
+                              firstDate: DateTime(2000),
+                              lastDate: DateTime(2100),
+                            ).then((selectedDate) {
+                              if (selectedDate != null) {
+                                // Tangkap tanggal yang dipilih dan lakukan sesuatu dengan nilainya
+                                print(selectedDate);
+                              }
+                            });
+                          },
+                          decoration: const InputDecoration(
+                            border: UnderlineInputBorder(),
+                            labelText: 'Pilih tanggal tenggat perbaikan',
+                          ),
+                          readOnly: true, // Membuat field menjadi read-only
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20,)
+                //
+                // Container(
+                //   padding: EdgeInsets.all(15), // Tambahkan padding dengan nilai 15
+                //   decoration: BoxDecoration(
+                //     borderRadius: BorderRadius.circular(13),
+                //     color: Color(0xFFFFFFFF),
+                //   ),
+                //   child: Column(
+                //     children: [
+                //       Row(
+                //         children: [
+                //           Icon(
+                //             Icons.circle,
+                //             color: Colors.grey,
+                //             size: 24.0,
+                //           ),
+                //           SizedBox(width: 10,),
+                //           Text("Tanggal Tengat Tugas", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),)
+                //         ],
+                //       ),
+                //       Container(
+                //         margin: EdgeInsets.only(left: 25,right: 25,bottom: 50),
+                //         child: Column(children: [
+                //           Row(children: [
+                //             Radio(
+                //               value: 1,
+                //               groupValue: 1,
+                //               onChanged: (value){},
+                //             ),
+                //               SizedBox(width: 10.0,),
+                //               Text("DONE"),
+                //
+                //                Radio(
+                //               value: 2,
+                //               groupValue: 2,
+                //               onChanged: (value){},
+                //             ),
+                //               SizedBox(width: 10.0,),
+                //               Text("ON Progres"),
+                //           ],),
+                //           Row(children: [
+                //             Radio(
+                //               value: 3,
+                //               groupValue: 3,
+                //               onChanged: (value){},
+                //             ),
+                //               SizedBox(width: 10.0,),
+                //               Text("DROP"),
+                //
+                //                Radio(
+                //               value: 4,
+                //               groupValue: 4,
+                //               onChanged: (value){},
+                //             ),
+                //               SizedBox(width: 10.0,),
+                //               Text("IDLE"),
+                //           ],),
+                //
+                //         ]),
+                //       ),
+                //     ],
+                //   ),
+                // ),
 
               ],
           ),
