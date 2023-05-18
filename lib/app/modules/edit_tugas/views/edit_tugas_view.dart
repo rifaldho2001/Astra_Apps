@@ -4,9 +4,19 @@ import 'package:get/get.dart';
 
 import '../controllers/edit_tugas_controller.dart';
 
-class EditTugasView extends GetView<EditTugasController> {
-  const EditTugasView({Key? key}) : super(key: key);
+enum Status { Done, OnProgress, Drop, Idle }
+
+class EditTugasView extends StatefulWidget {
+  // const EditTugasView(); // Make the constructor const
   @override
+  _EditTugasViewState createState() => _EditTugasViewState();
+}
+
+class _EditTugasViewState extends State<EditTugasView> {
+  int _value = 1;
+
+  @override
+  
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF8F8F8),
@@ -28,6 +38,7 @@ class EditTugasView extends GetView<EditTugasController> {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
         child: ListView(
           children: <Widget>[
+              
             Container(
               padding: EdgeInsets.all(15),
               decoration: BoxDecoration(
@@ -61,9 +72,76 @@ class EditTugasView extends GetView<EditTugasController> {
                   IconButton(
                     icon: Icon(Icons.arrow_drop_down),
                     color: Colors.black,
-                    iconSize: 30.0,
+                    iconSize: 50.0,
                     onPressed: () {
-                      // Aksi yang ingin Anda lakukan saat tombol ditekan
+                      showDialog(
+                      context: context , 
+                      builder: (context) => SimpleDialog(
+                        title: const Text("STATUS"),
+                        contentPadding: const EdgeInsets.all(20.0),
+                        children: [
+                          Row(children: [
+                            Radio(
+                            value: 1,
+                            groupValue: _value,
+                            onChanged: (int? value) {
+                              setState(() {
+                                _value = value!;
+                              });
+                            },
+                          ),
+                          SizedBox(width: 10.0),
+                          Text("DONE", style: TextStyle(color: Colors.green,fontWeight: FontWeight.bold),),
+                          ],
+                          ),
+                          Row(children: [
+                            Radio(
+                              value: 2,
+                              groupValue: _value,
+                             onChanged: (int? value) {
+                              setState(() {
+                                _value = value!;
+                              });
+                            },
+                            ),
+                            SizedBox(width: 10.0),
+                            Text("On Progress",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),),
+                          ],
+                          ),
+                          Row(children: [
+                            Radio(
+                              value: 3,
+                              groupValue: _value,
+                              onChanged: (int? value) {
+                              setState(() {
+                                _value = value!;
+                              });
+                            },
+                            ),
+                            SizedBox(width: 10.0),
+                            Text("DROP",style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),),
+                          ],
+                          ),
+                          Row(children: [
+                            Radio(
+                              value: 4,
+                              groupValue: _value,
+                                onChanged: (int? value) {
+                              setState(() {
+                                _value = value!;
+                              });
+                            },
+                            ),
+                            SizedBox(width: 10.0),
+                            Text("IDLE",style: TextStyle(color: Colors.yellow,fontWeight: FontWeight.bold),),
+                          ],
+                          ),
+                          TextButton(onPressed: (){
+                            Navigator.of(context).pop();
+                          }, child: const Text("close"))
+                        ],
+                      ),
+                   );
                     },
                   ),
                 ],
@@ -405,3 +483,5 @@ class EditTugasView extends GetView<EditTugasController> {
     );
   }
 }
+
+enum status {Done, OnProgress, Drop, IDLE}

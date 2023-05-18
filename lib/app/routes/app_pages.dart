@@ -46,10 +46,9 @@ class AppPages {
       page: () => const TambahTugasView(),
       binding: TambahTugasBinding(),
     ),
-    GetPage(
-      name: _Paths.EDIT_TUGAS,
-      page: () => const EditTugasView(),
-      binding: EditTugasBinding(),
+      GetPage(
+      name: Routes.EDIT_TUGAS,
+      page: () => EditTugasView(), // Remove the const keyword
     ),
   ];
 }

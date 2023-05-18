@@ -10,6 +10,7 @@ import '../../home/views/home_view.dart';
 class TugasView extends GetView<TugasController> {
   const TugasView({Key? key}) : super(key: key);
 
+  // int _value = 1;
 
   @override
   Widget build(BuildContext context) {
