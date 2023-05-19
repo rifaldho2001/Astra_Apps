@@ -1,3 +1,4 @@
+import 'package:astra_apps/app/routes/app_pages.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -56,15 +57,7 @@ class HomeView extends GetView<HomeController> {
                           child: Column(
                             children: [
                               ElevatedButton(
-                                onPressed: () {
-                                  Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return TugasView();
-                                    }, 
-                                ),
-                            );
-                                },
+                                onPressed: () => Get.toNamed(Routes.TUGAS, arguments: listallDocs[index].id),
                                 style: ElevatedButton.styleFrom(
                                   elevation: 0,
                                   backgroundColor: const Color(0xFFF8F8F8),
