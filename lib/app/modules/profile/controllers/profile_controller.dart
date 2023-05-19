@@ -1,23 +1,14 @@
+import 'package:astra_apps/app/routes/app_pages.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 
 class ProfileController extends GetxController {
-  //TODO: Implement ProfileController
+  FirebaseAuth auth = FirebaseAuth.instance;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+
+  logout() async {
+    await FirebaseAuth.instance.signOut();
+    Get.offAllNamed(Routes.LOGIN);
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

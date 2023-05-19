@@ -5,8 +5,6 @@ import 'package:get/get.dart';
 import '../controllers/tambah_tugas_controller.dart';
 
 class TambahTugasView extends GetView<TambahTugasController> {
-  const TambahTugasView({Key? key}) : super(key: key);
-
   // int _value = 1
 
   @override

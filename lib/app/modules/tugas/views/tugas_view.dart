@@ -8,7 +8,6 @@ import '../../tambah_tugas/views/tambah_tugas_view.dart';
 import '../../home/views/home_view.dart';
 
 class TugasView extends GetView<TugasController> {
-  const TugasView({Key? key}) : super(key: key);
 
 
   @override

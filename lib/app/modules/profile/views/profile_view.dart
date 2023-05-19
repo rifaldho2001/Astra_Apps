@@ -1,3 +1,4 @@
+import 'package:astra_apps/app/controllers/authentication_controller.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -8,7 +9,7 @@ import '../controllers/profile_controller.dart';
 import '../../login/views/login_view.dart';
 
 class ProfileView extends GetView<ProfileController> {
-  const ProfileView({Key? key}) : super(key: key);
+  final authC = Get.find<AuthenticationController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,18 +77,10 @@ class ProfileView extends GetView<ProfileController> {
                         )
                     ),
             SizedBox(
-              height: 15,
+              height: 50,
             ),
             ElevatedButton(
-                      onPressed: () {
-                          Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return LoginView();
-                  }, 
-                  ),
-              );
-                      },
+                      onPressed: () => authC.signOut(),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromRGBO(255, 255, 255, 1),
                         minimumSize: const Size.fromHeight(50),
@@ -100,8 +93,8 @@ class ProfileView extends GetView<ProfileController> {
                         child: Row(
                           children: [
                             Icon(
-                              Icons.logout_outlined,
-                              color: Color.fromRGBO(221, 44, 50, 1),
+                              Icons.mode_edit_outline,
+                              color: Colors.red,
                             ),
                             SizedBox(
                               width: 10,
@@ -110,7 +103,7 @@ class ProfileView extends GetView<ProfileController> {
                             'Logout',
                             style: GoogleFonts.poppins(
                               textStyle: TextStyle(
-                                color: Color.fromRGBO(221, 44, 50, 1),
+                                color: Colors.red,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500
                               )

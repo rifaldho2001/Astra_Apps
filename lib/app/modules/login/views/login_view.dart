@@ -1,3 +1,4 @@
+import 'package:astra_apps/app/controllers/authentication_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
@@ -5,7 +6,7 @@ import 'package:get/get.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
-  const LoginView({Key? key}) : super(key: key);
+  final authC = Get.find<AuthenticationController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +31,7 @@ class LoginView extends GetView<LoginController> {
                 height: 30.0,
               ),
                     Text(
-                      'Username',
+                      'Email',
                       style: GoogleFonts.poppins(
                         textStyle: TextStyle(
                           color: Color.fromRGBO(20, 85, 163, 1),
@@ -40,6 +41,7 @@ class LoginView extends GetView<LoginController> {
                       ),
                     ),
                     TextField(
+                      controller: controller.emailC,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(14.0)
@@ -60,6 +62,7 @@ class LoginView extends GetView<LoginController> {
                       ),
                       ),
                     TextField(
+                      controller: controller.passC,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(14.0)
@@ -113,7 +116,7 @@ class LoginView extends GetView<LoginController> {
       floatingActionButton: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20),
         child:  ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () => authC.signIn(controller.emailC.text, controller.passC.text),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromRGBO(20, 85, 163, 1),
                         minimumSize: const Size.fromHeight(50),
