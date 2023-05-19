@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -33,129 +34,98 @@ class HomeView extends GetView<HomeController> {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 34,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 7, // jumlah item dalam listview
-                itemBuilder: (BuildContext context, int index) {
-                  // array of cities
-                  List<String> cities = [
-                    'Balikpapan',
-                    'Berau',
-                    'Bulungan',
-                    'Nunukan',
-                    'PPU',
-                    'Paser',
-                    'Tarakan',
-                  ];
-                  return Padding(
-                    padding: const EdgeInsets.only(right: 10),
-                    child: Obx(
-                          () => TextButton(
-                        onPressed: () {
-                          controller.selectCity(index);
-                        },
-                        style: TextButton.styleFrom(
-                          backgroundColor: controller.selectedCityIndex.value == index
-                              ? Color(0xFFFDCA40) // ubah warna tombol ketika dipilih
-                              : const Color(0x408D8D8D), // warna 25%
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(7),
-                          ),
-                          minimumSize: const Size(0, 34), // lebar maksimum, tinggi 34
-                          elevation: 0,
+      body: StreamBuilder<QuerySnapshot<Object?>>(
+          stream: controller.getDealers(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.active) {
+              var listallDocs = snapshot.data!.docs;
+              return ListView.builder(
+                itemCount: listallDocs.length,
+                itemBuilder: ((context, index) => 
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        height: 150,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF417CC2),
+                          borderRadius: BorderRadius.circular(22),
                         ),
-                        child: Text(
-                          cities[index],
-                          style: const TextStyle(
-                            fontSize: 14,
-                            color: Color(0xFF212121),
+                        child: Padding(
+                          padding: const EdgeInsets.all(15),
+                          child: Column(
+                            children: [
+                              ElevatedButton(
+                                onPressed: () {
+                                  Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return TugasView();
+                                    }, 
+                                ),
+                            );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  elevation: 0,
+                                  backgroundColor: const Color(0xFFF8F8F8),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(11),
+                                  ),
+                                  minimumSize: const Size(double.infinity, 80),
+                                ),
+                                child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.circle,
+                                          color: Colors.grey,
+                                          size: 24.0,
+                                          semanticLabel: 'Text to announce in accessibility modes',
+                                        ),
+                                        Text(
+                                          "${(listallDocs[index].data() as Map<String, dynamic>) ['nama']}"
+                                          ,style: TextStyle(color: Colors.black, fontSize: 18), )
+                                      ],
+                                    ),
+                                  ),
+                              const SizedBox(height: 15),
+                              Expanded(
+                                child: Align(
+                                  alignment: Alignment.bottomRight,
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      elevation: 0,
+                                      backgroundColor: const Color(0xFFFFFFFF),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(11),
+                                      ),
+                                      minimumSize: const Size(30, 30),
+                                    ),
+                                    child: const Icon(
+                                      Icons.download_rounded,
+                                      size: 18,
+                                      color: Color(0xFF417CC2),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
-                    ),
-                  );
-                },
-              ),
-            ),
-            const SizedBox(height: 24),
-        Container(
-          height: 150,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: const Color(0xFF417CC2),
-            borderRadius: BorderRadius.circular(22),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(15),
-            child: Column(
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return TugasView();
-                      }, 
-                  ),
-              );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    elevation: 0,
-                    backgroundColor: const Color(0xFFF8F8F8),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(11),
-                    ),
-                    minimumSize: const Size(double.infinity, 80),
-                  ),
-                  child: Row(
-                        children: [
-                          Icon(
-                            Icons.circle,
-                            color: Colors.grey,
-                            size: 24.0,
-                            semanticLabel: 'Text to announce in accessibility modes',
-                          ),
-                          Text("Astra Motor MT. Hariyono",style: TextStyle(color: Colors.black, fontSize: 24), )
-                        ],
-                      ),
-                    ),
-                const SizedBox(height: 15),
-                Expanded(
-                  child: Align(
-                    alignment: Alignment.bottomRight,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        
-                      },
-                      style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        backgroundColor: const Color(0xFFFFFFFF),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(11),
-                        ),
-                        minimumSize: const Size(30, 30),
-                      ),
-                      child: const Icon(
-                        Icons.download_rounded,
-                        size: 18,
-                        color: Color(0xFF417CC2),
-                      ),
-                    ),
-                  ),
+                    )
                 ),
-              ],
-            ),
-          ),
+              );
+              
+            }
+
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
         ),
-        ],
-        ),
-      ),
     floatingActionButton: Container(
       padding: EdgeInsets.all(10),
       margin: EdgeInsets.symmetric(horizontal: 20),
