@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import '../controllers/edit_tugas_controller.dart';
 
 class EditTugasView extends GetView<EditTugasController> {
-  const EditTugasView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

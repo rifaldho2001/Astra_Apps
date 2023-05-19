@@ -18,37 +18,37 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.EDIT_TUGAS;
+  static const INITIAL = Routes.HOME;
 
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () => const HomeView(),
+      page: () => HomeView(),
       binding: HomeBinding(),
     ),
     GetPage(
       name: _Paths.PROFILE,
-      page: () => const ProfileView(),
+      page: () =>  ProfileView(),
       binding: ProfileBinding(),
     ),
     GetPage(
       name: _Paths.TUGAS,
-      page: () => const TugasView(),
+      page: () => TugasView(),
       binding: TugasBinding(),
     ),
     GetPage(
       name: _Paths.LOGIN,
-      page: () => const LoginView(),
+      page: () => LoginView(),
       binding: LoginBinding(),
     ),
     GetPage(
       name: _Paths.TAMBAH_TUGAS,
-      page: () => const TambahTugasView(),
+      page: () => TambahTugasView(),
       binding: TambahTugasBinding(),
     ),
     GetPage(
       name: _Paths.EDIT_TUGAS,
-      page: () => const EditTugasView(),
+      page: () => EditTugasView(),
       binding: EditTugasBinding(),
     ),
   ];
