@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 class ProfileController extends GetxController {
   FirebaseAuth auth = FirebaseAuth.instance;
 
-
   logout() async {
     await FirebaseAuth.instance.signOut();
     Get.offAllNamed(Routes.LOGIN);
