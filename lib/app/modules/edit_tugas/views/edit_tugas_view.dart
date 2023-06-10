@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
 import '../controllers/edit_tugas_controller.dart';
 
 class EditTugasView extends GetView<EditTugasController> {
@@ -11,10 +9,13 @@ class EditTugasView extends GetView<EditTugasController> {
       backgroundColor: const Color(0xFFF8F8F8),
       appBar: AppBar(
         toolbarHeight: 60,
-        title: Text('Tugas 1', style: TextStyle(color: Colors.black),),
+        title: Text(
+          'Tugas 1',
+          style: TextStyle(color: Colors.black),
+        ),
         leading: IconButton(
           onPressed: () {
-            Navigator.of(context).pop( );
+            Navigator.of(context).pop();
           },
           icon: Icon(Icons.arrow_back_ios_new_rounded),
           iconSize: 20,
@@ -68,10 +69,10 @@ class EditTugasView extends GetView<EditTugasController> {
                 ],
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
 
             Container(
-              padding: EdgeInsets.all(15), // Tambahkan padding dengan nilai 15
+              padding: EdgeInsets.all(15),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(13),
                 color: Color(0xFFFFFFFF),
@@ -86,25 +87,28 @@ class EditTugasView extends GetView<EditTugasController> {
                         size: 24.0,
                       ),
                       SizedBox(width: 10,),
-                      Text("Nama Temuan", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20, ),)
+                      Text(
+                        "Nama Temuan",
+                        style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                      ),
                     ],
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 25,right: 25),
-                    child:  TextFormField(
+                    margin: EdgeInsets.only(left: 25, right: 25),
+                    child: TextFormField(
                       decoration: const InputDecoration(
                         border: UnderlineInputBorder(),
                         labelText: 'Tuliskan nama temuan',
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
 
             Container(
-              padding: EdgeInsets.all(15), // Tambahkan padding dengan nilai 15
+              padding: EdgeInsets.all(15),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(13),
                 color: Color(0xFFFFFFFF),
@@ -119,22 +123,25 @@ class EditTugasView extends GetView<EditTugasController> {
                         size: 24.0,
                       ),
                       SizedBox(width: 10,),
-                      Text("Activity Perbaikan", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),)
+                      Text(
+                        "Activity Perbaikan",
+                        style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                      ),
                     ],
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 25,right: 25),
-                    child:  TextFormField(
+                    margin: EdgeInsets.only(left: 25, right: 25),
+                    child: TextFormField(
                       decoration: const InputDecoration(
                         border: UnderlineInputBorder(),
                         labelText: 'Tuliskan activity perbaikan',
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
 
             Container(
               padding: EdgeInsets.all(15),
@@ -180,10 +187,10 @@ class EditTugasView extends GetView<EditTugasController> {
                 ],
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
 
             Container(
-              padding: EdgeInsets.all(15), // Tambahkan padding dengan nilai 15
+              padding: EdgeInsets.all(15),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(13),
                 color: Color(0xFFFFFFFF),
@@ -198,13 +205,17 @@ class EditTugasView extends GetView<EditTugasController> {
                         size: 24.0,
                       ),
                       SizedBox(width: 10,),
-                      Flexible(child: Text("Nama PIC",style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20)),
+                      Flexible(
+                        child: Text(
+                          "Nama PIC",
+                          style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                        ),
                       ),
                     ],
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 25,right: 25),
-                    child:  TextFormField(
+                    margin: EdgeInsets.only(left: 25, right: 25),
+                    child: TextFormField(
                       decoration: const InputDecoration(
                         border: UnderlineInputBorder(),
                         labelText: 'PIC yang melakukan temuan',
@@ -214,7 +225,7 @@ class EditTugasView extends GetView<EditTugasController> {
                 ],
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
 
             Container(
               padding: EdgeInsets.all(15),
@@ -235,7 +246,7 @@ class EditTugasView extends GetView<EditTugasController> {
                       Text(
                         "Tanggal Temuan",
                         style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
-                      )
+                      ),
                     ],
                   ),
                   Container(
@@ -264,7 +275,7 @@ class EditTugasView extends GetView<EditTugasController> {
                 ],
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
 
             Container(
               padding: EdgeInsets.all(15),
@@ -285,7 +296,7 @@ class EditTugasView extends GetView<EditTugasController> {
                       Text(
                         "Tanggal Tenggat Perbaikan",
                         style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
-                      )
+                      ),
                     ],
                   ),
                   Container(
@@ -314,71 +325,7 @@ class EditTugasView extends GetView<EditTugasController> {
                 ],
               ),
             ),
-            SizedBox(height: 20,)
-            //
-            // Container(
-            //   padding: EdgeInsets.all(15), // Tambahkan padding dengan nilai 15
-            //   decoration: BoxDecoration(
-            //     borderRadius: BorderRadius.circular(13),
-            //     color: Color(0xFFFFFFFF),
-            //   ),
-            //   child: Column(
-            //     children: [
-            //       Row(
-            //         children: [
-            //           Icon(
-            //             Icons.circle,
-            //             color: Colors.grey,
-            //             size: 24.0,
-            //           ),
-            //           SizedBox(width: 10,),
-            //           Text("Tanggal Tengat Tugas", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),)
-            //         ],
-            //       ),
-            //       Container(
-            //         margin: EdgeInsets.only(left: 25,right: 25,bottom: 50),
-            //         child: Column(children: [
-            //           Row(children: [
-            //             Radio(
-            //               value: 1,
-            //               groupValue: 1,
-            //               onChanged: (value){},
-            //             ),
-            //               SizedBox(width: 10.0,),
-            //               Text("DONE"),
-            //
-            //                Radio(
-            //               value: 2,
-            //               groupValue: 2,
-            //               onChanged: (value){},
-            //             ),
-            //               SizedBox(width: 10.0,),
-            //               Text("ON Progres"),
-            //           ],),
-            //           Row(children: [
-            //             Radio(
-            //               value: 3,
-            //               groupValue: 3,
-            //               onChanged: (value){},
-            //             ),
-            //               SizedBox(width: 10.0,),
-            //               Text("DROP"),
-            //
-            //                Radio(
-            //               value: 4,
-            //               groupValue: 4,
-            //               onChanged: (value){},
-            //             ),
-            //               SizedBox(width: 10.0,),
-            //               Text("IDLE"),
-            //           ],),
-            //
-            //         ]),
-            //       ),
-            //     ],
-            //   ),
-            // ),
-
+            SizedBox(height: 20),
           ],
         ),
       ),
@@ -387,19 +334,19 @@ class EditTugasView extends GetView<EditTugasController> {
           backgroundColor: Color(0xFF1455A3),
           elevation: 0,
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(50.0)),
+            borderRadius: BorderRadius.circular(50.0),
+          ),
           padding: EdgeInsetsDirectional.all(15),
           minimumSize: Size(30, 30),
         ),
         onPressed: () {
-          Navigator.of(context).pop( );
+          Navigator.of(context).pop();
         },
         child: Icon(
           Icons.check_rounded,
           size: 30,
           color: Color(0xFFF8F8F8),
         ),
-
       ),
     );
   }

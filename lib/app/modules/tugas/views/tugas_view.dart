@@ -1,7 +1,6 @@
 import 'package:astra_apps/app/modules/home/views/home_view.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 
 import '../controllers/tugas_controller.dart';
@@ -9,47 +8,48 @@ import '../../tambah_tugas/views/tambah_tugas_view.dart';
 import '../../home/views/home_view.dart';
 
 class TugasView extends GetView<TugasController> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 60,
-          leading: IconButton(
-            onPressed: () {
-                 Navigator.of(context).pop( );
-            },
-            icon: Icon(Icons.arrow_back_ios_new_rounded),
-            iconSize: 20,
-            color: Colors.black,
-          ),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(
-                Icons.notifications_none_rounded,
-                size: 30,
-                color: Colors.black,
-              ),
-              onPressed: () {
-                // do something
-              },
-            ),
-          ],
-          backgroundColor: const Color(0xFFF8F8F8),
-          elevation: 0,
+      appBar: AppBar(
+        toolbarHeight: 60,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back_ios_new_rounded),
+          iconSize: 20,
+          color: Colors.black,
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.notifications_none_rounded,
+              size: 30,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              // do something
+            },
+          ),
+        ],
+        backgroundColor: const Color(0xFFF8F8F8),
+        elevation: 0,
+      ),
       body: StreamBuilder<DocumentSnapshot<Object?>>(
         stream: controller.getDealers(Get.arguments),
         builder: (context, snapshot) {
-          if(snapshot.connectionState == ConnectionState.active){
+          if (snapshot.connectionState == ConnectionState.active) {
             var data = snapshot.data!.data() as Map<String, dynamic>;
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
               child: ListView(
                 scrollDirection: Axis.vertical,
                 children: [
-                  Text(data["nama"], style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+                  Text(
+                    data["nama"],
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
+                  ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 26.0),
                     child: Row(
@@ -109,26 +109,34 @@ class TugasView extends GetView<TugasController> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Row(
-                                      children: <Widget>[
-                                        Icon(
-                                          Icons.circle,
-                                          color: Colors.grey,
-                                          size: 24.0,
-                                          semanticLabel: 'Text to announce in accessibility modes',
+                                    children: <Widget>[
+                                      Icon(
+                                        Icons.circle,
+                                        color: Colors.grey,
+                                        size: 24.0,
+                                        semanticLabel: 'Text to announce in accessibility modes',
+                                      ),
+                                      Container(
+                                        margin: const EdgeInsets.only(left: 10.0),
+                                        child: Text(
+                                          "Tugas 2",
+                                          style: TextStyle(fontSize: 30, color: Colors.black),
                                         ),
-                                        Container(
-                                          margin: const EdgeInsets.only(left: 10.0),
-                                          child: Text(
-                                            "Tugas 2",
-                                            style: TextStyle(fontSize: 30, color: Colors.black),
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  Text("Status :", style: TextStyle(fontSize: 20, color: Colors.black),),
-                                  Text("Progress kerja :", style: TextStyle(fontSize: 20, color: Colors.black),),
-                                  Text("Memperbaiki lantai - lantai yang retak di showroom :", style: TextStyle(fontSize: 20, color: Colors.black),),
-
+                                      )
+                                    ],
+                                  ),
+                                  Text(
+                                    "Status :",
+                                    style: TextStyle(fontSize: 20, color: Colors.black),
+                                  ),
+                                  Text(
+                                    "Progress kerja :",
+                                    style: TextStyle(fontSize: 20, color: Colors.black),
+                                  ),
+                                  Text(
+                                    "Memperbaiki lantai - lantai yang retak di showroom :",
+                                    style: TextStyle(fontSize: 20, color: Colors.black),
+                                  ),
                                 ],
                               ),
                             ),
@@ -163,35 +171,33 @@ class TugasView extends GetView<TugasController> {
               ),
             );
           }
-
           return Center(
-              child: CircularProgressIndicator(),
-            );
-        }
+            child: CircularProgressIndicator(),
+          );
+        },
       ),
-        floatingActionButton: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            primary: Colors.blue,
-            onPrimary: Colors.white,
-            shadowColor: Colors.greenAccent,
-            elevation: 3,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(32.0)),
-            minimumSize: Size(100, 40), //////// HERE
+      floatingActionButton: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          primary: Colors.blue,
+          onPrimary: Colors.white,
+          shadowColor: Colors.greenAccent,
+          elevation: 3,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(32.0),
           ),
-          onPressed: () {
-             Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return TambahTugasView();
-                      }, 
-                  ),
-              );
-          },
-          child: Text('+  Tambahkan Tugas '),
-
-
+          minimumSize: Size(100, 40), //////// HERE
         ),
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) {
+                return TambahTugasView();
+              },
+            ),
+          );
+        },
+        child: Text('+  Tambahkan Tugas '),
+      ),
     );
   }
 }
